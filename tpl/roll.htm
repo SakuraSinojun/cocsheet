@@ -1,0 +1,53 @@
+        <div class="">
+            <div class="form-group">
+                <label for="who">WHO?</label>
+                <input type="text" class="form-control" id="who" placeholder="WHAT?">
+            </div>
+            <div class="form-group">
+                <label for="what">WHAT?</label>
+                <input type="text" class="form-control" id="what" placeholder="WHAT?">
+            </div>
+            <div class="form-group">
+                <label for="skill">SKILL</label>
+                <input type="number" class="form-control" id="skill" placeholder="SKILL">
+            </div>
+            <button class="btn btn-default btn-roll" val='3'>ROLL 1d3</button>
+            <button class="btn btn-default btn-roll" val='4'>ROLL 1d4</button>
+            <button class="btn btn-default btn-roll" val='6'>ROLL 1d6</button>
+            <button class="btn btn-default btn-roll" val='10'>ROLL 1d10</button>
+            <button class="btn btn-default btn-roll" val='100'>ROLL 1d100</button>
+        </div>
+
+        <div id="roll-history">
+            <div class="panel panel-default">
+                <div class="panel-heading">roll点记录</div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>who</th>
+                                <th>what</th>
+                                <th>skill</th>
+                                <th>dice</th>
+                                <th>roll</th>
+                                <th>date</th>
+                                <th>comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="roll in rolls" class="pointer">
+                                <td>{{roll.who}}</td>
+                                <td>{{roll.what}}</td>
+                                <td>{{roll.skill}}</td>
+                                <td>{{roll.dice}}</td>
+                                <td>{{roll.result}}</td>
+                                <td>{{roll.date}}</td>
+                                <td>{{roll.comment}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
