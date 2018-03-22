@@ -6,7 +6,7 @@ class index_controller {
 
     public function index_action() {
         $tpl = new tpl("header", "footer");
-        $tpl->display("index");
+        $tpl->display("roll");
     }
 
     public function roll_action() {
