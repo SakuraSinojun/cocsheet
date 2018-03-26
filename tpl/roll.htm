@@ -36,10 +36,11 @@
                                 <th>roll</th>
                                 <th>date</th>
                                 <th>comment</th>
+                                <th>copy</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="roll in rolls" class="pointer">
+                            <tr v-for="(roll,rk) in rolls" class="pointer">
                                 <td>{{roll.who}}</td>
                                 <td>{{roll.what}}</td>
                                 <td>{{roll.skill}}</td>
@@ -47,6 +48,7 @@
                                 <td>{{roll.result}}</td>
                                 <td>{{roll.date}}</td>
                                 <td><span v-bind:class="{xsuccess: roll.level == 1, xfail: roll.level == -1, fail: roll.level == -2, success: roll.level == 2, halfsuccess: roll.level == 3, hardsuccess: roll.level == 4}">{{roll.comment}}</span></td>
+                                <td><button class="btn btn-default" v-bind:rk="rk" v-on:click="copy">复制</button></td>
                             </tr>
                         </tbody>
                     </table>
