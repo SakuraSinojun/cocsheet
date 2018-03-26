@@ -1,0 +1,24 @@
+.fail {
+    color:red;
+}
+
+.xfail {
+    color: #A901DB;
+}
+
+.success {
+    color: #01DF01;
+}
+
+.halfsuccess {
+    color: #04B404;
+}
+
+.hardsuccess {
+    color: #0B6121;
+}
+
+.xsuccess {
+    color: #2E9AFE;
+}
+

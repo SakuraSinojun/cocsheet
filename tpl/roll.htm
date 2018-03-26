@@ -46,7 +46,7 @@
                                 <td>{{roll.dice}}</td>
                                 <td>{{roll.result}}</td>
                                 <td>{{roll.date}}</td>
-                                <td>{{roll.comment}}</td>
+                                <td><span v-bind:class="{xsuccess: roll.level == 1, xfail: roll.level == -1, fail: roll.level == -2, success: roll.level == 2, halfsuccess: roll.level == 3, hardsuccess: roll.level == 4}">{{roll.comment}}</span></td>
                             </tr>
                         </tbody>
                     </table>

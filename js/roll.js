@@ -13,24 +13,34 @@ $(document).ready(function() {
             console.debug(res);
             for (var k in res.data) {
                 res.data[k].comment = res.data[k].result;
+                res.data[k].level = 0;
+
                 if (res.data[k].dice == 100) {
                     var skill = res.data[k].skill;
                     var result = res.data[k].result;
                     if (result > 95) {
                         res.data[k].comment = "大失败";
-                    } else if (result < 5) {
+                        res.data[k].level = -1;
+                    } else if (result < 6) {
                         res.data[k].comment = "大成功";
+                        res.data[k].level = 1;
                     } else {
                         if (result > skill) {
                             res.data[k].comment = "失败";
+                            res.data[k].level = -2;
                         } else if (result > skill / 2) {
                             res.data[k].comment = "普通成功";
+                            res.data[k].level = 2;
                         } else if (result > skill / 5) {
                             res.data[k].comment = "困难成功";
+                            res.data[k].level = 3;
                         } else {
                             res.data[k].comment = "极难成功";
+                            res.data[k].level = 4;
                         }
                     }
+                } else {
+                    res.data[k].skill = '-';
                 }
             }
             page.rolls = res.data;
