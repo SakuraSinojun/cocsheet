@@ -60,8 +60,8 @@ $(document).ready(function() {
                 res.data[k].level = 0;
 
                 if (res.data[k].dice == 100) {
-                    var skill = res.data[k].skill;
-                    var result = res.data[k].result;
+                    var skill = parseInt(res.data[k].skill);
+                    var result = parseInt(res.data[k].result);
                     if (result > 95) {
                         res.data[k].comment = "大失败";
                         res.data[k].level = -1;
